@@ -9,10 +9,10 @@ app.get('/', async (req, res, next) => {
     const result = await new Promise((resolve, reject) => {
       setTimeout(() => {
         reject( createError(403));
-      }, 1000);
+      }, 4000);
     });
   } catch(err){
-    next(err);
+    throw new Error("Error from / route");
   }
 })
 
