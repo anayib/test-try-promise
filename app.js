@@ -1,5 +1,5 @@
 const express = require('express');
-const createError = require("http-errors");
+//const createError = require("http-errors");
 
 const app = express();
 app.use(express.json());
@@ -8,8 +8,8 @@ app.get('/', async (req, res, next) => {
   try {
     const result = await new Promise((resolve, reject) => {
       setTimeout(() => {
-        reject( createError(403));
-      }, 4000);
+        reject();
+      }, 1000);
     });
   } catch(err){
     throw new Error("Error from / route");
