@@ -1,6 +1,6 @@
 const express = require('express');
 //const createError = require("http-errors");
-
+// compare this failed error handling with the serverSuccessfulErrorHanlder.js serever
 const app = express();
 app.use(express.json());
 
@@ -11,8 +11,9 @@ app.get('/', async function (req, res, next) {
         reject(new Error("Error from Promise"));
       }, 1000);
     });
+    // this fails because Im not handling any successful response here like res.status(200).json(...)
   } catch(err){
-    throw new Error("Error from / route");
+    next(err)
   }
 })
 

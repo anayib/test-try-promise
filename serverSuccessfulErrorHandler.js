@@ -1,4 +1,6 @@
 // require('express-async-errors')
+// compare this successful error handling to serverFail.js
+
 const PORT = process.env.PORT || 3000;
 const express = require('express')
 

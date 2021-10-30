@@ -1,6 +1,7 @@
 # Examples of handling Errors with asynchronous code
 
-`server1.js` to `server5.js` files implement services that correctly handle errors with promises (asynchronous code).
+This repo includes several examples of how to handle and how not to handle asynchronous code error with express using promises async/await syntax, and also includes the wrapper approach to avoid repeating yourself wrtting try/catch statements in every middleware - file `serverAsyncWrapper.js` - .
+
 
 ## Questions
 
@@ -39,6 +40,8 @@ app.get('/', wrap(async (req, res, next) => {
   stream.on('error', next).pipe(res)
 }))
 ```
+Also check the file `serverAsyncWrapper.js`
+
 3. You need to pass the error via next(next) if the catch part of the try/catch or send it straight in the response. Eg:
 
 ```js
